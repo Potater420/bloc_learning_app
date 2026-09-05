@@ -1,83 +1,119 @@
-# Flutter BLoC & Cubit Learning App
+# Bloc Learning App
 
-A Flutter project demonstrating the BLoC and Cubit state management patterns using `flutter_bloc`.
+A Flutter project built to learn and demonstrate state management using the **BLoC pattern** with the `flutter_bloc` package. The project progresses from basic BLoC concepts (BlocListener, BlocBuilder, BlocConsumer) to a fully functional Counter App built with both `Bloc` and `Cubit`.
 
-## Features
+## Overview
 
-### Phase 1 — Introduction to BLoC
+This project covers:
 
-- CounterBloc for incrementing and decrementing a counter.
-- ThemeBloc for switching between light and dark themes.
+1. **Intro to BLoC** — Building a `CounterBloc` (integer state) and a `ThemeBloc` (light/dark theme toggle) to understand how BLoC handles different types of state.
+2. **BLoC Widgets** — Using `BlocListener`, `BlocBuilder`, and `BlocConsumer` to react to and display counter state changes, including triggering a `SnackBar`.
+3. **Full Counter App** — Building a complete counter application using `CounterCubit`, with increment/decrement logic, a negative-value dialog, and a `BlocConsumer` message at ±10.
 
-### Phase 2 — Bloc Widgets
+## Technologies Used
 
-- BlocBuilder to rebuild the UI when the counter changes.
-- BlocListener to display a SnackBar when the counter reaches a specific value.
-- BlocConsumer to combine BlocBuilder and BlocListener functionality.
-
-### Phase 3 — Counter Cubit App
-
-- CounterCubit with increment and decrement methods.
-- BlocProvider for providing the Cubit to the widget tree.
-- `context.read<CounterCubit>()` for calling Cubit methods.
-- BlocBuilder for displaying the counter.
-- BlocListener for displaying a dialog when the counter becomes negative.
-- BlocConsumer for displaying a message when the counter reaches 10 or -10.
+- Flutter SDK & Dart
+- [flutter_bloc](https://pub.dev/packages/flutter_bloc) package
+- BLoC & Cubit
+- `BlocBuilder`, `BlocListener`, `BlocConsumer`
+- `BlocProvider` & `context.read`
+- Git & GitHub
 
 ## Project Structure
 
-```text
-lib/
-├── bloc/
-│   ├── counter_bloc.dart
-│   ├── counter_event.dart
-│   ├── counter_state.dart
-│   ├── theme_bloc.dart
-│   ├── theme_event.dart
-│   ├── theme_state.dart
-│   └── counter_cubit.dart
-│
-├── counter_bloc_screen.dart
-├── counter_cubit_screen.dart
-└── main.dart
+```
+bloc_learning_app/
+├── lib/
+│   ├── bloc/
+│   │   ├── counter_bloc.dart      # CounterBloc: handles increment/decrement events
+│   │   ├── counter_event.dart     # Events for CounterBloc (Increment, Decrement)
+│   │   ├── counter_state.dart     # State for CounterBloc (integer counter value)
+│   │   ├── theme_bloc.dart        # ThemeBloc: toggles between light and dark theme
+│   │   ├── theme_event.dart       # Events for ThemeBloc (ToggleTheme)
+│   │   └── theme_state.dart       # State for ThemeBloc (light/dark theme)
+│   ├── cubit/
+│   │   ├── counter_cubit.dart     # CounterCubit: increment/decrement methods
+│   │   └── counter_state.dart     # State for CounterCubit
+│   ├── counter_bloc_screen.dart   # Screen demonstrating BlocListener/BlocBuilder/BlocConsumer with CounterBloc
+│   ├── counter_cubit_screen.dart  # Screen demonstrating the full Counter App with CounterCubit
+│   └── main.dart                  # App entry point, BlocProvider setup
+├── test/
+├── pubspec.yaml
+└── README.md
+```
 
-screenshots/
-├── phase1_light_theme.png
-├── phase1_dark_theme.png
-├── phase2_snackbar.png
-├── phase2_blocbuilder.png
-└── phase3_counter_app.png
-Technologies
-Flutter
-Dart
-flutter_bloc
-Screenshots
-Phase 1 — ThemeBloc
+## Getting Started
 
-Phase 2 — BlocListener
+### Prerequisites
 
-Phase 2 — BlocBuilder
+- [Flutter SDK](https://docs.flutter.dev/get-started/install) installed and configured
+- A connected device or emulator
 
-Phase 3 — CounterCubit
+### Installation
 
-Getting Started
-Clone the repository.
-Run:
-flutter pub get
-Start the application:
-flutter run
-Author
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/<your-username>/bloc_learning_app.git
+   cd bloc_learning_app
+   ```
+2. Install dependencies:
+   ```bash
+   flutter pub get
+   ```
+3. Run the app:
+   ```bash
+   flutter run
+   ```
 
-Peter
+## Feature Breakdown
 
+### Phase 1 — Intro to BLoC
 
-**Important:** change the screenshot filenames in the README if your actual filenames are different.
+- **CounterBloc**: Handles `IncrementCounter` and `DecrementCounter` events and emits an updated integer `CounterState`.
+- **ThemeBloc**: Handles a `ToggleTheme` event and emits a `ThemeState` representing light or dark mode.
 
----
+### Phase 2 — BlocListener, BlocBuilder & BlocConsumer
 
-# 2. Check your project before GitHub
+- **BlocListener**: Listens for counter state changes and displays a `SnackBar` when the counter reaches a specific value (e.g., 10 or -10), without rebuilding the UI.
+- **BlocBuilder**: Rebuilds the counter display widget whenever the counter state changes.
+- **BlocConsumer**: Combines both behaviors in a single widget — rebuilds the UI to show the counter value and triggers a `SnackBar` for specific values.
 
-Open the terminal in your project folder and run:
+### Phase 3 — Full Counter App (Cubit)
 
-```bash
-git status
+- **CounterCubit**: Exposes `increment()` and `decrement()` methods that emit a new integer state.
+- **BlocProvider**: Provides `CounterCubit` to the widget tree at the top of `counter_cubit_screen.dart`.
+- **context.read<CounterCubit>()**: Used inside button `onPressed` callbacks to call `increment()` / `decrement()` without rebuilding on state change.
+- **BlocBuilder**: Displays the current counter value in a `Text` widget, rebuilding whenever the state changes.
+- **BlocListener**: Shows an `AlertDialog` whenever the counter value becomes negative.
+- **BlocConsumer**: Displays the counter value and shows a `SnackBar` message whenever the counter reaches `10` or `-10`.
+
+## Code Conventions
+
+- Each BLoC, Cubit, and screen lives in its own file.
+- Classes, variables, and widgets use clear, self-explanatory names.
+- Short comments explain BLoC/Cubit logic (event handling, state emission).
+- No unused imports or dead code.
+- All files formatted with:
+  ```bash
+  dart format .
+  ```
+
+## Screenshots
+
+| Phase | Description | Screenshot |
+|-------|-------------|------------|
+| Phase 1 | CounterBloc and ThemeBloc running | _add screenshot_ |
+| Phase 2 | SnackBar triggered by BlocListener | _add screenshot_ |
+| Phase 2 | Counter UI updated by BlocBuilder | _add screenshot_ |
+| Phase 3 | Complete Counter App — dialog & BlocConsumer message | _add screenshot_ |
+
+> Replace `_add screenshot_` with actual image links, e.g. `![Phase 1](screenshots/phase1.png)`, after adding a `screenshots/` folder to the repo.
+
+## Author
+
+- **Name:** _Your Name_
+- **GitHub:** [github.com/your-username](https://github.com/your-username)
+
+## License
+
+This project is for educational purposes as part of a Flutter BLoC learning exercise.
