@@ -102,10 +102,10 @@ bloc_learning_app/
 
 | Phase | Description | Screenshot |
 |-------|-------------|------------|
-| Phase 1 | CounterBloc and ThemeBloc running | ![CounterBloc and ThemeBloc running](screenshots/CounterBloc%20and%20ThemeBloc%20running.jpg) |
-| Phase 2 | SnackBar triggered by BlocListener | ![SnackBar triggered by BlocListener](screenshots/SnackBar%20triggered%20by%20BlocListener.jpg) |
-| Phase 2 | Counter UI updated by BlocBuilder | ![Counter UI updated by BlocBuilder](screenshots/Counter%20UI%20updated%20by%20BlocBuilder.jpg) |
-| Phase 3 | Complete Counter App — dialog & BlocConsumer message | ![Complete Counter App — dialog and BlocConsumer message](screenshots/Complete%20Counter%20App%20—%20dialog%20&%20BlocConsumer%20message.jpg) |
+| Phase 1 | CounterBloc and ThemeBloc running | ![CounterBloc and ThemeBloc running](screen_shots/CounterBloc%20and%20ThemeBloc%20running.jpg) |
+| Phase 2 | SnackBar triggered by BlocListener | ![SnackBar triggered by BlocListener](screen_shots/SnackBar%20triggered%20by%20BlocListener.jpg) |
+| Phase 2 | Counter UI updated by BlocBuilder | ![Counter UI updated by BlocBuilder](screen_shots/Counter%20UI%20updated%20by%20BlocBuilder.jpg) |
+| Phase 3 | Complete Counter App — dialog & BlocConsumer message | ![Complete Counter App — dialog and BlocConsumer message](screen_shots/Complete%20Counter%20App%20—%20dialog%20&%20BlocConsumer%20message.jpg) |
 
 ## Author
 
