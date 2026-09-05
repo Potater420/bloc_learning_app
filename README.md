@@ -53,7 +53,7 @@ bloc_learning_app/
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/<your-username>/bloc_learning_app.git
+   git clone https://github.com/Potater420/bloc_learning_app.git
    cd bloc_learning_app
    ```
 2. Install dependencies:
@@ -102,17 +102,16 @@ bloc_learning_app/
 
 | Phase | Description | Screenshot |
 |-------|-------------|------------|
-| Phase 1 | CounterBloc and ThemeBloc running | _add screenshot_ |
-| Phase 2 | SnackBar triggered by BlocListener | _add screenshot_ |
-| Phase 2 | Counter UI updated by BlocBuilder | _add screenshot_ |
-| Phase 3 | Complete Counter App — dialog & BlocConsumer message | _add screenshot_ |
-
-> Replace `_add screenshot_` with actual image links, e.g. `![Phase 1](screenshots/phase1.png)`, after adding a `screenshots/` folder to the repo.
+| Phase 1 | CounterBloc and ThemeBloc running | ![CounterBloc and ThemeBloc running](screenshots/CounterBloc%20and%20ThemeBloc%20running.jpg) |
+| Phase 2 | SnackBar triggered by BlocListener | ![SnackBar triggered by BlocListener](screenshots/SnackBar%20triggered%20by%20BlocListener.jpg) |
+| Phase 2 | Counter UI updated by BlocBuilder | ![Counter UI updated by BlocBuilder](screenshots/Counter%20UI%20updated%20by%20BlocBuilder.jpg) |
+| Phase 3 | Complete Counter App — dialog & BlocConsumer message | ![Complete Counter App — dialog and BlocConsumer message](screenshots/Complete%20Counter%20App%20—%20dialog%20&%20BlocConsumer%20message.jpg) |
 
 ## Author
 
-- **Name:** _Your Name_
-- **GitHub:** [github.com/your-username](https://github.com/your-username)
+- **Name:** Peter Gamal
+- **GitHub:** [github.com/Potater420](https://github.com/Potater420)
+- **Repository:** [github.com/Potater420/bloc_learning_app](https://github.com/Potater420/bloc_learning_app)
 
 ## License
 
